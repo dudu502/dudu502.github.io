@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2021/02/07/%E5%B8%A7%E5%90%8C%E6%AD%A5/</loc>
+    
+    <lastmod>2021-02-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/02/01/%E5%9B%BD%E6%88%98%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
     
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-09</lastmod>
     
   </url>
   
@@ -18,11 +25,25 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>http://example.com/tags/Game-Develop/</loc>
+    <lastmod>2021-02-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Game-Editor/</loc>
+    <lastmod>2021-02-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 
   

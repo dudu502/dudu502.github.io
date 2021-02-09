@@ -4,14 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>百炼青铜</title>
+  <title>帧同步 | 百炼青铜</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="百炼青铜">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="帧同步与状态同步 帧同步和状态同步都是一种能让多个客户端在相对同一时刻表现一致的方法，当然只有外观表现一致还远远不够，或者说还不够精确，这时候还需要在数据层面也要保持一致，用数据的变化来驱动外在表现的变化。这点不管是帧同步或状态同步都是一样的。 关于数据驱动显示的话题，这里有一个反面事例，我想起了在若干年以前我曾经听一个同事说他一个俄罗斯方块游戏的开发经历，他分享了在开发过程中就方块与方块间图像碰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="帧同步">
+<meta property="og:url" content="http://example.com/2021/02/07/%E5%B8%A7%E5%90%8C%E6%AD%A5/index.html">
 <meta property="og:site_name" content="百炼青铜">
+<meta property="og:description" content="帧同步与状态同步 帧同步和状态同步都是一种能让多个客户端在相对同一时刻表现一致的方法，当然只有外观表现一致还远远不够，或者说还不够精确，这时候还需要在数据层面也要保持一致，用数据的变化来驱动外在表现的变化。这点不管是帧同步或状态同步都是一样的。 关于数据驱动显示的话题，这里有一个反面事例，我想起了在若干年以前我曾经听一个同事说他一个俄罗斯方块游戏的开发经历，他分享了在开发过程中就方块与方块间图像碰">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-07T02:30:31.000Z">
+<meta property="article:modified_time" content="2021-02-09T08:06:36.611Z">
 <meta property="article:author" content="Pan Haijie">
+<meta property="article:tag" content="Game Develop">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="百炼青铜" type="application/atom+xml">
@@ -69,9 +74,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-帧同步" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-帧同步" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/02/07/%E5%B8%A7%E5%90%8C%E6%AD%A5/" class="article-date">
   <time class="dt-published" datetime="2021-02-07T02:30:31.000Z" itemprop="datePublished">2021-02-07</time>
@@ -84,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/07/%E5%B8%A7%E5%90%8C%E6%AD%A5/">帧同步</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      帧同步
     </h1>
   
 
@@ -209,118 +212,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-国战编辑器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/02/01/%E5%9B%BD%E6%88%98%E7%BC%96%E8%BE%91%E5%99%A8/" class="article-date">
-  <time class="dt-published" datetime="2021-02-01T07:11:23.000Z" itemprop="datePublished">2021-02-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/01/%E5%9B%BD%E6%88%98%E7%BC%96%E8%BE%91%E5%99%A8/">国战编辑器</a>
-    </h1>
+    <a href="/2021/02/01/%E5%9B%BD%E6%88%98%E7%BC%96%E8%BE%91%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">国战编辑器</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>经典的SLG游戏都离不开国战的玩法，尤其以三国类题材居多，我在几年前有幸参与了一款经典的三国类SLG游戏的开发，其中的国战玩法相当典型。包含这几点元素：</p>
-<p>#1大地图（整个中国版图相当宏伟）；</p>
-<p>#2城池数量庞大城与城之间包含复杂的连接组成庞大的城市网络；</p>
-<p>#3路线的曲线各种各样；</p>
-<p>#4丰富的地形设计；</p>
-<p>#5单个城池的信息复杂多样；</p>
-<p>那么该如何将这么多复杂的信息整合在一起呢，毕竟光200多个的城池详细信息要让策划录入配置表就已经是一件不可能完成的事情了，考虑到效率和人文关怀。我为策划同事们开发了一款国战大底图编辑器。这个编辑器现在可以在我的网盘中<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1pzNFkzji9gr-Fuu4hDaQLA">下载</a>（979s）。</p>
-<p><strong>我设计编辑器的主要功能还是便于策划和我们程序开发，因此可视化所见所得是必须的，当我们打开CountryMapEditor.exe的时候，界面是这样的：</strong></p>
-<p><img src="/2021/02/01/%E5%9B%BD%E6%88%98%E7%BC%96%E8%BE%91%E5%99%A8/5c6bf414623d1.png" alt="国战编辑器"></p>
-<p>这个界面中的大地图铺面了整个场景，缩略图窗口显示出当前的视窗位置：位于整个大地图的西北角，如此大的地图素材，需要在打开游戏或编辑器的时候对地图进行分块裁切，这部分工作在另外的工具中已经完成了，所有的地图分块保存着工具目录的asset目录下（这里把大地图切成了100块相同尺寸的数据块）待程序启动根据当前视窗大小和位置与数据分块中记录的数据比较进而选择加载适当的分块数据。这点也一些地图app类似。</p>
-<p>地图数据的加载与释放同样都很重要，这与性能息息相关。在视窗远离某些分块时候做适当的数据释放，这点很重要。</p>
-<p>接下来的这一步是编辑城池：</p>
-<p><img src="/2021/02/01/%E5%9B%BD%E6%88%98%E7%BC%96%E8%BE%91%E5%99%A8/5c6bf19aecd8e.png" alt="国战编辑器"></p>
-<p>我在这里已经编辑了一些城池，从上图我们可以看到城池与城池之间的红色贝塞尔曲线就是他们之间的道路，<strong>用两个点可以调整贝塞尔曲线的曲率，使得曲线与地面道路尽可能贴合，这样单条贝塞尔曲线的点集合M描述了城池A与城池B之间的路径长度或者说是权重，记为M｛A,B｝ = Value；Value值就是点与点之间的长度和，</strong>这个Value很重要，它将在迪杰斯特拉算法中充当权重的角色，因此这个值不光前端需要，后端也需要这个值。在实际游戏中某个城池会出现毁坏状态，此时经过这个城池的所有道路将处于失效状态。这个时候也可以通过修改权重达到效果。</p>
-<p>我们编辑完成后可以点击Output按钮这样我们就把数据保存了下来；我们去找一下MapNode文件夹</p>
-<p><img src="/2021/02/01/%E5%9B%BD%E6%88%98%E7%BC%96%E8%BE%91%E5%99%A8/5c6bf75e535e0.png" alt="国战编辑器"></p>
-<p>如图所示，文件夹内有两个文件，其中xml文件简单明了</p>
-<p><img src="/2021/02/01/%E5%9B%BD%E6%88%98%E7%BC%96%E8%BE%91%E5%99%A8/5c6bf7a255e20.png" alt="国战编辑器"></p>
-<p>将所有的关系都已经列举了出来，这种配置文件信息后端很需要，另外一个二进制文件是前端用的，里面不止包含了xml中的信息还有一些其他敏感数据信息。</p>
-<p>到这里这个国战编辑器就算完成了，这部分的工作使得策划可以更安心的处理游戏细节，而不必受困于生产工具。需要项目工程的可以联系我。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/02/01/%E5%9B%BD%E6%88%98%E7%BC%96%E8%BE%91%E5%99%A8/" data-id="ckkm8b5o80000kkssea33eayf" data-title="国战编辑器" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game-Editor/" rel="tag">Game Editor</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/02/01/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-02-01T05:47:14.592Z" itemprop="datePublished">2021-02-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/02/01/hello-world/" data-id="ckkm5n4d70000d0ss40o12ze1" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
