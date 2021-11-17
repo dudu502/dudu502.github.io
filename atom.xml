@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-02-09T08:06:36.611Z</updated>
+  <updated>2021-11-17T07:32:29.436Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OOP 的局限性</title>
+    <link href="http://example.com/2021/11/17/OOP-%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/"/>
+    <id>http://example.com/2021/11/17/OOP-%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/</id>
+    <published>2021-11-17T07:30:24.000Z</published>
+    <updated>2021-11-17T07:32:29.436Z</updated>
+    
+    <content type="html"><![CDATA[<p>试想存在这么一个场景: 如何移动物体的问题</p><p>有人这个对象，人可以移动，用OOP的设计思想就是这个对象Human。在Human这个class里有一个Move的方法，调用这个方法就可以让这个对象移动。当我们发现一条狗也可以移动的时候，同样的我们需要在Dog这个class里也加一个Move的方法。其实这两个方法里很大一部分逻辑都一样，这时候我们想把这两个类抽象出一个叫Animal的基类，在这个基类里添加Move的方法实现一部分共有逻辑再允许子类去复写。这样是不是就是完美了呢？一俩车也可以移动啊？这就说明不管怎么向上抽象都不足以涵盖今后发生的扩展问题。那么把Move方法写在IMovable接口里呢？所有的对象都去实现IMovable接口，这样的话很多重复逻辑没法合并。那么用一个实现了IMovable接口的类再提供给运动对象去调用呢？类似于 HumanMove类，DogMove类，CarMove类，如此类推，今后要扩展的物体都需要做Move类的扩展。而且接口也是可以继承的，必然会遇到Animal同样的问题。</p><p>再举一个游戏开发中遇到的问题，开发初期我们想好了兵种有，步兵，骑兵，弓箭手，这三个类型的兵种，步兵的Attack方法里是‘大力挥砍’，弓箭手的Attack方法里是‘瞄准发射’，骑兵的Attack方法里是‘快速突刺’ 。随着项目的进行，后来发现骑兵可以升级，他能获得骑射的能力，就是说他的Attack方法是‘瞄准发射’，并且还有了近战时候的‘大力挥砍’的行为。此时再重新设计类结构就会异常麻烦，而且还无法兼顾今后的扩展。当然这种情况用上述的策略模式解决一部分问题，把攻击行为做成类。让不同的对象添加不同的攻击策略。但是如果出现另一种藤甲兵他像步兵，但是又有轻便的装备，移动速度比弓箭手还快，藤甲步兵虽然移动速度快但是相比步兵又有非常怕火的属性。我们想到的方法是让藤甲兵继承步兵，这样一个子类继承一个基类需要修改大部分的方法才能达到想要的要求。这样的写法本身就不优化。</p><p>但我今天想说的是尝试ECS的方式。还是关于移动的问题。人，浮萍，狗，汽车，卫星，星球，甚至整个太阳系他们都有移动的能力，在ECS的世界里，他们都只是一个唯一ID值，即EntityID。把属性写在Component里，在Component里没有方法只有数据。比如NameComponent{ Name=“Human”}… 用来表示称呼。所有的移动问题归根结底是速度和方向问题。这样就有了MovementComponent{Speed=1，Direction=[1,1,1]}。一辆车从自家停车场开到公司停下来这一路上都可以通过修改这个MovementComponent里的Speed和Direction来完成。起步和刹车是个变速过程，连续修改Speed的值就能实现。静止的时候Speed就是0。再需要一个PositionComponent{Position=[0,0,0],Forward=[1,0,0]}的组件。一个物体需要位置和朝向就能把它固定下来。这时候需要System来实现各种功能了，在System里没有属性变量只有一个Execute的方法，在这个方法里修改指定的Component。现在我们需要一个MoveSystem，在这个系统里面会找出所有MovementComponent并计算出对应移动参数作用下的位置数据：PositionComponent+=MovementComponent类似于这样的操作。这样整个移动过程就完成了，再有像汽车起步和刹车的行为需要修改MovementComponent里的属性，那么需要在MoveSystem执行前执行额外的AccelerationSystem。行星的话需要执行GravitationalFieldSystem。所有的System在一个SystemGroup中依次执行完毕，交予显示部分就可以了。整个过程中我们没有过多关注移动物体本身的类型，也不用关心类的继承关系。后续有新的移动逻辑只需要添加对应的System就好了，不需要修改已有的逻辑。</p><p>组合优于继承。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;试想存在这么一个场景: 如何移动物体的问题&lt;/p&gt;
+&lt;p&gt;有人这个对象，人可以移动，用OOP的设计思想就是这个对象Human。在Human这个class里有一个Move的方法，调用这个方法就可以让这个对象移动。当我们发现一条狗也可以移动的时候，同样的我们需要在Dog这个cl</summary>
+      
+    
+    
+    
+    
+    <category term="Design Pattern" scheme="http://example.com/tags/Design-Pattern/"/>
+    
+  </entry>
   
   <entry>
     <title>帧同步</title>
