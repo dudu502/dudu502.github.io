@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/01/18/%E4%BB%BB%E5%8A%A1%E5%88%87%E6%8D%A2%E7%BB%93%E6%9E%84-TSS/</loc>
+    
+    <lastmod>2022-01-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/11/17/OOP-%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/</loc>
     
     <lastmod>2021-11-17</lastmod>
@@ -32,7 +39,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2021-11-17</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -40,21 +47,21 @@
   
   <url>
     <loc>http://example.com/tags/Game-Develop/</loc>
-    <lastmod>2021-11-17</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Game-Editor/</loc>
-    <lastmod>2021-11-17</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Design-Pattern/</loc>
-    <lastmod>2021-11-17</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

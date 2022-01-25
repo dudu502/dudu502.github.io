@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   
+
   
   <title>OOP 的局限性 | 百炼青铜</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="试想存在这么一个场景: 如何移动物体的问题 有人这个对象，人可以移动，用OOP的设计思想就是这个对象Human。在Human这个class里有一个Move的方法，调用这个方法就可以让这个对象移动。当我们发现一条狗也可以移动的时候，同样的我们需要在Dog这个class里也加一个Move的方法。其实这两个方法里很大一部分逻辑都一样，这时候我们想把这两个类抽象出一个叫Animal的基类，在这个基类里添加">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OOP 的局限性">
@@ -22,21 +23,14 @@
     <link rel="alternate" href="/atom.xml" title="百炼青铜" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.png">
   
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body>
@@ -72,12 +66,11 @@
     </div>
   </div>
 </header>
-
       <div class="outer">
-        <section id="main"><article id="post-OOP-的局限性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-OOP-的局限性" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/11/17/OOP-%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/" class="article-date">
-  <time class="dt-published" datetime="2021-11-17T07:30:24.000Z" itemprop="datePublished">2021-11-17</time>
+  <time datetime="2021-11-17T07:30:24.000Z" itemprop="datePublished">2021-11-17</time>
 </a>
     
   </div>
@@ -87,14 +80,14 @@
       <header class="article-header">
         
   
-    <h1 class="p-name article-title" itemprop="headline name">
+    <h1 class="article-title" itemprop="name">
       OOP 的局限性
     </h1>
   
 
       </header>
     
-    <div class="e-content article-entry" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody">
       
         <p>试想存在这么一个场景: 如何移动物体的问题</p>
 <p>有人这个对象，人可以移动，用OOP的设计思想就是这个对象Human。在Human这个class里有一个Move的方法，调用这个方法就可以让这个对象移动。当我们发现一条狗也可以移动的时候，同样的我们需要在Dog这个class里也加一个Move的方法。其实这两个方法里很大一部分逻辑都一样，这时候我们想把这两个类抽象出一个叫Animal的基类，在这个基类里添加Move的方法实现一部分共有逻辑再允许子类去复写。这样是不是就是完美了呢？一俩车也可以移动啊？这就说明不管怎么向上抽象都不足以涵盖今后发生的扩展问题。那么把Move方法写在IMovable接口里呢？所有的对象都去实现IMovable接口，这样的话很多重复逻辑没法合并。那么用一个实现了IMovable接口的类再提供给运动对象去调用呢？类似于 HumanMove类，DogMove类，CarMove类，如此类推，今后要扩展的物体都需要做Move类的扩展。而且接口也是可以继承的，必然会遇到Animal同样的问题。</p>
@@ -105,8 +98,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/17/OOP-%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/" data-id="ckw37ja4g0000sgss9rkt2h5g" data-title="OOP 的局限性" class="article-share-link">Share</a>
-      
+      <a data-url="http://example.com/2021/11/17/OOP-%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/" data-id="ckw37ja4g0000sgss9rkt2h5g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Pattern/" rel="tag">Design Pattern</a></li></ul>
@@ -116,6 +108,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2022/01/18/%E4%BB%BB%E5%8A%A1%E5%88%87%E6%8D%A2%E7%BB%93%E6%9E%84-TSS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          任务切换结构-TSS
+        
+      </div>
+    </a>
   
   
     <a href="/2021/02/07/%E5%B8%A7%E5%90%8C%E6%AD%A5/" id="article-nav-older" class="article-nav-link-wrap">
@@ -127,7 +128,6 @@
 
   
 </article>
-
 
 </section>
         
@@ -150,7 +150,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Pattern/" style="font-size: 10px;">Design Pattern</a> <a href="/tags/Game-Develop/" style="font-size: 10px;">Game Develop</a> <a href="/tags/Game-Editor/" style="font-size: 10px;">Game Editor</a>
+      <a href="/tags/Design-Pattern/" style="font-size: 20px;">Design Pattern</a> <a href="/tags/Game-Develop/" style="font-size: 10px;">Game Develop</a> <a href="/tags/Game-Editor/" style="font-size: 10px;">Game Editor</a>
     </div>
   </div>
 
@@ -159,7 +159,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li></ul>
     </div>
   </div>
 
@@ -170,6 +170,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/01/18/%E4%BB%BB%E5%8A%A1%E5%88%87%E6%8D%A2%E7%BB%93%E6%9E%84-TSS/">任务切换结构-TSS</a>
+          </li>
         
           <li>
             <a href="/2021/11/17/OOP-%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/">OOP 的局限性</a>
@@ -199,13 +203,11 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      
-      &copy; 2021 Pan Haijie<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2022 Pan Haijie<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
-
     </div>
     <nav id="mobile-nav">
   
@@ -216,19 +218,19 @@
 </nav>
     
 
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
 
 <script src="/js/script.js"></script>
-
 
 
 
